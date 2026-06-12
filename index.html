@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The AI Hackathon — Watch First</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23f6f2e7'/%3E%3Ctext x='50' y='72' font-size='62' text-anchor='middle' fill='%23f6b73c'%3E%E2%98%85%3C/text%3E%3C/svg%3E" />
-<meta name="description" content="Two short videos to watch before the AI Hackathon. No technical background needed — just curiosity." />
+<meta name="description" content="Watch the AI Hackathon videos, explore the two Catalyst challenges, and prepare for the day." />
 
 <!-- Open Graph -->
 <meta property="og:title" content="The AI Hackathon — Watch First" />
-<meta property="og:description" content="Two short videos to get you ready. You don't need to be technical — just curious." />
+<meta property="og:description" content="Watch the two short videos, explore the Catalyst challenges, and come ready to contribute." />
 <meta property="og:type" content="website" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -160,6 +160,7 @@
     transform:rotate(-4deg);
   }
   .ep:nth-of-type(2) .num{background:var(--green);transform:rotate(4deg)}
+  .ep:nth-of-type(3) .num{background:var(--amber);color:var(--ink);transform:rotate(-3deg)}
 
   .ep-head{align-self:center}
   .ep-tag{
@@ -216,6 +217,70 @@
     transform:rotate(5deg);
   }
 
+  /* ============ CHALLENGES ============ */
+  .challenge-intro{
+    color:var(--ink-soft);font-size:1.08rem;max-width:66ch;
+    margin:6px 0 24px;
+  }
+  .challenge-grid{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:22px;
+  }
+  .challenge-card{
+    position:relative;background:rgba(255,255,255,.72);
+    border:2.5px solid var(--ink);border-radius:6px;
+    padding:28px 26px 26px;box-shadow:var(--shadow);
+  }
+  .challenge-card:first-child{border-color:var(--blue);transform:rotate(-.5deg)}
+  .challenge-card:nth-child(2){border-color:var(--green);transform:rotate(.5deg)}
+  .challenge-label{
+    display:inline-block;font-family:"Caveat",cursive;font-weight:700;
+    font-size:1.2rem;margin-bottom:14px;padding:.1em .6em;
+    border-radius:20px;color:#fff;background:var(--blue);
+  }
+  .challenge-card:nth-child(2) .challenge-label{background:var(--green)}
+  .challenge-card h3{
+    font-size:clamp(1.35rem,2.7vw,1.8rem);line-height:1.1;
+    letter-spacing:-.02em;margin-bottom:8px;
+  }
+  .challenge-subtitle{
+    font-family:"Caveat",cursive;font-size:1.45rem;font-weight:700;
+    color:var(--blue);line-height:1.1;margin-bottom:18px;
+  }
+  .challenge-card:nth-child(2) .challenge-subtitle{color:var(--green)}
+  .challenge-card p{color:var(--ink-soft)}
+  .impact{
+    margin-top:20px;padding-top:16px;border-top:2px dashed var(--line);
+  }
+  .impact strong{
+    display:block;color:var(--ink);font-size:.82rem;
+    letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;
+  }
+  .impact ul{display:grid;gap:7px;list-style:none}
+  .impact li{position:relative;padding-left:22px;color:var(--ink-soft)}
+  .impact li::before{
+    content:"✓";position:absolute;left:0;color:var(--green);font-weight:800;
+  }
+  .prep-note{
+    position:relative;margin-top:28px;padding:26px 30px;
+    background:var(--sticky);border:2.5px solid var(--ink);
+    border-radius:4px;box-shadow:10px 11px 0 rgba(30,27,20,.10);
+    transform:rotate(-.4deg);
+  }
+  .prep-note h3{
+    font-family:"Caveat",cursive;font-size:2rem;line-height:1;
+    margin-bottom:12px;
+  }
+  .prep-note p{color:#514500;font-size:1.05rem}
+  .prep-note strong{color:var(--ink)}
+  .prep-prompts{
+    display:flex;flex-wrap:wrap;gap:9px;margin-top:18px;
+  }
+  .prep-prompts span{
+    background:rgba(255,255,255,.58);border:2px solid rgba(30,27,20,.55);
+    border-radius:30px;padding:.25em .75em;font-weight:700;
+  }
+
   /* ============ FOOTER ============ */
   footer{
     text-align:center;padding:30px 0 80px;
@@ -239,6 +304,9 @@
     .ep{grid-template-columns:1fr;gap:14px}
     .num{grid-row:auto;width:80px;height:80px;line-height:80px;font-size:2.6rem}
     .ep-body{grid-column:1}
+    .challenge-grid{grid-template-columns:1fr}
+    .challenge-card,.challenge-card:first-child,.challenge-card:nth-child(2){transform:none}
+    .prep-note{padding:24px 20px}
     header{padding:44px 0 10px}
   }
 
@@ -333,6 +401,77 @@
               allowfullscreen></iframe>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ CHALLENGES ============ -->
+    <section class="ep io" id="challenges">
+      <div class="num">3</div>
+      <div class="ep-head">
+        <span class="ep-tag">your focus for the day</span>
+        <h2 class="ep-title">The Catalyst Challenges</h2>
+      </div>
+      <div class="ep-body">
+        <p class="challenge-intro">
+          You will work on one of two real challenges from the Catalyst programme.
+          We will split into groups on the day, so think about <b>where your experience
+          can add the most value</b> and which challenge you would most like to pick up.
+        </p>
+
+        <div class="challenge-grid">
+          <article class="challenge-card">
+            <span class="challenge-label">Challenge 1</span>
+            <h3>Economic Crime Prevention Platform</h3>
+            <p class="challenge-subtitle">Role-based AI enablement</p>
+            <p>
+              Develop high-value, role-specific copilot prompts for ECPP role groups,
+              including <b>engineers, Consumer Journey Managers and product owners</b>.
+              The goal is useful AI support designed around the work each role actually does.
+            </p>
+            <div class="impact">
+              <strong>Potential impact</strong>
+              <ul>
+                <li>Faster decision-making</li>
+                <li>Improved productivity</li>
+                <li>More consistent use of AI across ECPP</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="challenge-card">
+            <span class="challenge-label">Challenge 2</span>
+            <h3>Operating Model Delivery</h3>
+            <p class="challenge-subtitle">Better performance goals</p>
+            <p>
+              Use AI to review more than <b>600 performance goals</b>, checking that they
+              follow Your Best guidance and link clearly to the 2026 priorities.
+            </p>
+            <div class="impact">
+              <strong>The opportunity</strong>
+              <ul>
+                <li>SharePoint-based AI agents providing consistent quality control</li>
+                <li>Stronger goals and action plans tailored to delivery roles</li>
+                <li>Consistent checks across teams at scale</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <aside class="prep-note">
+          <h3>Before the hackathon...</h3>
+          <p>
+            If you can, speak to people in your teams and gather useful detail about these
+            challenges. Think about the people involved, what currently works, where the
+            friction is and what could be improved. <strong>Better context will make the
+            planning more effective and the solution stronger.</strong> You do not need to
+            arrive with the answer — come ready to ask good questions and contribute your experience.
+          </p>
+          <div class="prep-prompts" aria-label="Preparation questions">
+            <span>Which challenge?</span>
+            <span>Where can you add value?</span>
+            <span>What can your team tell you?</span>
+          </div>
+        </aside>
       </div>
     </section>
 
