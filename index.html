@@ -284,34 +284,33 @@
 
   /* ============ AGENDA ============ */
   .agenda-grid{
-    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;
+    display:grid;gap:18px;max-width:640px;margin:0 auto;
   }
   .agenda-col{
     background:rgba(255,255,255,.72);border:2.5px solid var(--ink);
-    border-radius:6px;padding:22px 24px 24px;box-shadow:var(--shadow);
+    border-radius:6px;padding:18px 22px 20px;box-shadow:var(--shadow);
   }
-  .agenda-col:first-child{border-color:var(--blue);transform:rotate(-.4deg)}
-  .agenda-col:last-child{border-color:var(--green);transform:rotate(.4deg)}
+  .agenda-col:first-child{border-color:var(--blue)}
+  .agenda-col:last-child{border-color:var(--green)}
   .agenda-when{
     font-family:"Caveat",cursive;font-weight:700;font-size:1.7rem;
-    color:var(--blue);margin-bottom:14px;line-height:1;
+    color:var(--blue);margin-bottom:10px;line-height:1;
   }
   .agenda-when.alt{color:var(--green)}
-  .agenda-list{list-style:none;display:grid;gap:11px}
+  .agenda-list{list-style:none;display:grid}
   .agenda-list li{
-    display:grid;grid-template-columns:60px 1fr;gap:10px;align-items:baseline;
-    padding-bottom:10px;border-bottom:1.5px dashed var(--line);
+    display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center;
+    padding:10px 0;border-bottom:1.5px dashed var(--line);
   }
-  .agenda-list li:last-child{border-bottom:0;padding-bottom:0}
-  .agenda-list .t{font-weight:800;color:var(--ink)}
-  .agenda-list .a{color:var(--ink-soft)}
-  .agenda-list .a em{
-    font-style:normal;font-family:"Caveat",cursive;font-weight:700;
-    color:var(--blue);margin-left:6px;font-size:1.05rem;
+  .agenda-list li:last-child{border-bottom:0}
+  .agenda-list .t{font-weight:800;color:var(--ink);font-variant-numeric:tabular-nums}
+  .agenda-list .a{color:var(--ink)}
+  .agenda-list .d{
+    justify-self:end;font-size:.72rem;font-weight:800;color:var(--ink-soft);
+    background:rgba(0,0,0,.06);border-radius:999px;padding:3px 10px;white-space:nowrap;
   }
-  .agenda-col:last-child .a em{color:var(--green)}
-  .agenda-list li.brk .a{font-style:italic;opacity:.72}
-  .agenda-list li.brk .t{opacity:.6}
+  .agenda-list li.brk{opacity:.58}
+  .agenda-list li.brk .a{font-style:italic}
 
   /* ============ FOOTER ============ */
   footer{
@@ -456,23 +455,23 @@
           <div class="agenda-col">
             <h3 class="agenda-when">Morning</h3>
             <ul class="agenda-list">
-              <li><span class="t">9:00</span><span class="a">Welcome &amp; what today is <em>15m</em></span></li>
-              <li><span class="t">9:15</span><span class="a">Get set up on Base44 <em>30m</em></span></li>
-              <li><span class="t">9:45</span><span class="a">Prompting masterclass: Base44 + Copilot <em>45m</em></span></li>
-              <li class="brk"><span class="t">10:30</span><span class="a">Break <em>15m</em></span></li>
-              <li><span class="t">10:45</span><span class="a">Build something personal <em>1h</em></span></li>
-              <li class="brk"><span class="t">11:45</span><span class="a">Lunch <em>30m</em></span></li>
+              <li><span class="t">9:00</span><span class="a">Welcome &amp; what today is</span><span class="d">15m</span></li>
+              <li><span class="t">9:15</span><span class="a">Get set up on Base44</span><span class="d">15m</span></li>
+              <li><span class="t">9:30</span><span class="a">Prompting masterclass: Base44 + Copilot</span><span class="d">30m</span></li>
+              <li class="brk"><span class="t">10:00</span><span class="a">Break</span><span class="d">15m</span></li>
+              <li><span class="t">10:15</span><span class="a">Build something personal</span><span class="d">1h 30m</span></li>
+              <li class="brk"><span class="t">11:45</span><span class="a">Lunch</span><span class="d">30m</span></li>
             </ul>
           </div>
           <div class="agenda-col">
             <h3 class="agenda-when alt">Afternoon</h3>
             <ul class="agenda-list">
-              <li><span class="t">12:15</span><span class="a">Define business problems + form groups <em>30m</em></span></li>
-              <li><span class="t">12:45</span><span class="a">Plan as a group <em>1h</em></span></li>
-              <li><span class="t">1:45</span><span class="a">Build <em>1h</em></span></li>
-              <li class="brk"><span class="t">2:45</span><span class="a">Break <em>15m</em></span></li>
-              <li><span class="t">3:00</span><span class="a">Refine <em>45m</em></span></li>
-              <li><span class="t">3:45</span><span class="a">Playback &amp; showcase <em>45m</em></span></li>
+              <li><span class="t">12:15</span><span class="a">Define business problems + form groups</span><span class="d">30m</span></li>
+              <li><span class="t">12:45</span><span class="a">Plan as a group</span><span class="d">1h</span></li>
+              <li><span class="t">1:45</span><span class="a">Build</span><span class="d">1h</span></li>
+              <li class="brk"><span class="t">2:45</span><span class="a">Break</span><span class="d">15m</span></li>
+              <li><span class="t">3:00</span><span class="a">Refine</span><span class="d">45m</span></li>
+              <li><span class="t">3:45</span><span class="a">Playback &amp; showcase</span><span class="d">45m</span></li>
             </ul>
           </div>
         </div>
