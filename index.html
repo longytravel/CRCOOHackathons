@@ -312,6 +312,20 @@
   .agenda-list li.brk{opacity:.58}
   .agenda-list li.brk .a{font-style:italic}
 
+  /* ============ STORIES CTA ============ */
+  .cta-stories{margin:0 0 84px}
+  .cta-card{
+    display:block;text-decoration:none;color:var(--ink);
+    background:var(--sticky-2);border:2.5px solid var(--ink);border-radius:6px;
+    padding:26px 30px;box-shadow:var(--shadow);transform:rotate(-.4deg);
+    transition:transform .2s ease, box-shadow .2s ease;max-width:640px;margin:0 auto;
+  }
+  .cta-card:hover{transform:translate(-3px,-3px) rotate(-.4deg);box-shadow:22px 22px 0 rgba(30,27,20,.08)}
+  .cta-kicker{font-family:"Caveat",cursive;font-weight:700;font-size:1.3rem;color:var(--blue);display:block}
+  .cta-card strong{display:block;font-size:clamp(1.4rem,3.5vw,2rem);letter-spacing:-.02em;line-height:1.1;margin:2px 0 6px}
+  .cta-sub{color:var(--ink-soft)}
+  .foot-note a{color:var(--blue);font-weight:700;text-decoration:none}
+
   /* ============ FOOTER ============ */
   footer{
     text-align:center;padding:30px 0 80px;
@@ -369,8 +383,9 @@
     </h1>
 
     <p class="lede reveal d4">
-      Two short videos to get you ready. <strong>You don't need to be technical</strong> —
-      just bring your curiosity. Watch them in order, then come build something with us.
+      A couple of short videos and the plan for the day to get you ready.
+      <strong>You don't need to be technical</strong> — just bring your curiosity.
+      Watch in order, see how the day runs, then hear from people who've done it.
     </p>
 
     <div class="chips reveal d5" aria-label="What you'll learn">
@@ -458,10 +473,10 @@
               <li><span class="t">9:00</span><span class="a">Welcome &amp; what today is</span><span class="d">15m</span></li>
               <li><span class="t">9:15</span><span class="a">Get set up on Base44</span><span class="d">15m</span></li>
               <li><span class="t">9:30</span><span class="a">Prompting masterclass: Base44 + Copilot</span><span class="d">30m</span></li>
-              <li><span class="t">10:00</span><span class="a">Build something personal on Base44</span><span class="d">1h</span></li>
-              <li class="brk"><span class="t">11:00</span><span class="a">Break</span><span class="d">15m</span></li>
-              <li><span class="t">11:15</span><span class="a">Define business problems + form groups</span><span class="d">45m</span></li>
-              <li><span class="t">12:00</span><span class="a">Plan as a group</span><span class="d">45m</span></li>
+              <li><span class="t">10:00</span><span class="a">Build something personal on Base44</span><span class="d">45m</span></li>
+              <li class="brk"><span class="t">10:45</span><span class="a">Break</span><span class="d">15m</span></li>
+              <li><span class="t">11:00</span><span class="a">Form groups + define business problems</span><span class="d">45m</span></li>
+              <li><span class="t">11:45</span><span class="a">Plan as a group</span><span class="d">1h</span></li>
               <li class="brk"><span class="t">12:45</span><span class="a">Lunch</span><span class="d">45m</span></li>
             </ul>
           </div>
@@ -492,12 +507,21 @@
       </div>
     </section>
 
+    <!-- ============ STORIES (links to testimonials page) ============ -->
+    <section class="cta-stories">
+      <a class="cta-card" href="./testimonials.html">
+        <span class="cta-kicker">and then…</span>
+        <strong>Hear from people who've done it →</strong>
+        <span class="cta-sub">Stories from past hackathons — and what they built next.</span>
+      </a>
+    </section>
+
   </main>
 
   <footer>
     <div class="footer-rule"></div>
     <p class="signoff">See you at the hackathon <span class="star">★</span></p>
-    <p class="foot-note">It starts with a question, not a strategy paper.</p>
+    <p class="foot-note">It starts with a question, not a strategy paper. · <a href="./testimonials.html">Read the stories →</a></p>
   </footer>
 
 </div>
