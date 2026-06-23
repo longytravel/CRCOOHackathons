@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The AI Hackathon — Stories</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23f6f2e7'/%3E%3Ctext x='50' y='72' font-size='62' text-anchor='middle' fill='%23f6b73c'%3E%E2%98%85%3C/text%3E%3C/svg%3E" />
+<meta name="description" content="What people built — and kept building — after the AI Hackathon." />
+
+<!-- Open Graph -->
+<meta property="og:title" content="The AI Hackathon — Stories" />
+<meta property="og:description" content="What people built — and kept building — after the AI Hackathon." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --paper:#f6f2e7;
+    --paper-2:#efe9da;
+    --ink:#1e1b14;
+    --ink-soft:#4a4538;
+    --line:#d9d1bd;
+    --blue:#2f6bff;
+    --red:#ef5350;
+    --green:#23a06b;
+    --amber:#f6b73c;
+    --sticky:#ffe27a;
+    --sticky-2:#bfe3ff;
+    --shadow:18px 18px 0 rgba(30,27,20,.06);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+
+  body{
+    font-family:"Bricolage Grotesque",system-ui,sans-serif;
+    color:var(--ink);
+    background-color:var(--paper);
+    background-image:
+      radial-gradient(circle at 18% 12%, rgba(47,107,255,.06), transparent 38%),
+      radial-gradient(circle at 88% 8%, rgba(246,183,60,.10), transparent 40%),
+      radial-gradient(circle at 70% 92%, rgba(35,160,107,.07), transparent 42%),
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:auto, auto, auto, 30px 30px, 30px 30px;
+    background-position:0 0, 0 0, 0 0, -1px -1px, -1px -1px;
+    line-height:1.55;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* paper grain overlay */
+  body::after{
+    content:"";
+    position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    mix-blend-mode:multiply;
+  }
+
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+  /* ---------- sticky note ---------- */
+  .sticky{
+    display:inline-block;
+    font-family:"Caveat",cursive;font-weight:700;
+    background:var(--sticky);
+    color:#5a4a00;
+    padding:.35em .75em;
+    font-size:1.25rem;
+    box-shadow:4px 5px 0 rgba(30,27,20,.12);
+    transform:rotate(-2.5deg);
+    border-radius:2px;
+  }
+  .sticky.blue{background:var(--sticky-2);color:#13486f}
+
+  /* ---------- top back-link ---------- */
+  .topbar{padding:26px 0 0}
+  .back{
+    font-family:"Caveat",cursive;font-weight:700;font-size:1.35rem;
+    color:var(--ink-soft);text-decoration:none;
+  }
+  .back:hover{color:var(--blue)}
+
+  /* ============ HEADER ============ */
+  header{padding:36px 0 24px;text-align:center}
+  .kicker{margin-bottom:24px}
+  h1{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(2.6rem,8vw,5.4rem);letter-spacing:-.03em;line-height:.95;
+    text-transform:uppercase;
+  }
+  h1 .hl{color:var(--green)}
+  .lede{
+    max-width:600px;margin:30px auto 0;
+    font-size:clamp(1.05rem,2.1vw,1.3rem);color:var(--ink-soft);
+  }
+  .lede strong{color:var(--ink);font-weight:700}
+
+  main{padding:38px 0 30px}
+
+  /* ============ FEATURED STORY (matches homepage video block) ============ */
+  .ep{
+    display:grid;grid-template-columns:120px 1fr;gap:8px 26px;
+    align-items:start;margin-bottom:72px;position:relative;
+  }
+  .num{
+    grid-row:1 / span 2;
+    font-family:"Caveat",cursive;font-weight:700;
+    width:104px;height:104px;line-height:104px;text-align:center;
+    font-size:3.4rem;color:#fff;border-radius:50%;
+    background:var(--green);box-shadow:6px 7px 0 rgba(30,27,20,.14);
+    transform:rotate(-4deg);
+  }
+  .ep-head{align-self:center}
+  .ep-tag{
+    font-family:"Caveat",cursive;font-weight:600;font-size:1.25rem;
+    color:var(--ink-soft);display:block;margin-bottom:-2px;
+  }
+  .ep-title{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(1.8rem,4.4vw,2.9rem);letter-spacing:-.02em;line-height:1;
+  }
+  .ep-body{grid-column:2}
+  .ep-desc{color:var(--ink-soft);font-size:1.08rem;max-width:60ch;margin:6px 0 20px}
+  .ep-desc b{color:var(--ink)}
+
+  /* video frame — whiteboard panel */
+  .frame{
+    position:relative;background:#fff;padding:14px;
+    border:2.5px solid var(--ink);border-radius:6px;box-shadow:var(--shadow);
+  }
+  .video{position:relative;width:100%;aspect-ratio:16/9;border-radius:3px;overflow:hidden;background:#0d0d10}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* placeholder until the embed is dropped in */
+  .placeholder{
+    position:relative;width:100%;aspect-ratio:16/9;border-radius:3px;
+    background:repeating-linear-gradient(45deg, #efe9da 0 14px, #f6f2e7 14px 28px);
+    border:3px dashed var(--line);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:14px;text-align:center;padding:24px;
+  }
+  .play-ghost{width:74px;height:74px;border-radius:50%;border:3px solid var(--ink-soft);display:grid;place-items:center;opacity:.6}
+  .play-ghost::after{content:"";border-left:22px solid var(--ink-soft);border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
+  .placeholder p{font-family:"Bricolage Grotesque";font-weight:700;font-size:1.15rem;color:var(--ink-soft)}
+  .badge-soon{position:absolute;top:-16px;right:18px;z-index:3;transform:rotate(5deg)}
+
+  /* ============ QUOTE WALL ============ */
+  .wall-head{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.02em;
+    text-align:center;margin:8px 0 6px;
+  }
+  .wall-sub{text-align:center;color:var(--ink-soft);max-width:50ch;margin:0 auto 34px}
+
+  .quote-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+  .quote{
+    position:relative;background:var(--sticky);border:2.5px solid var(--ink);
+    border-radius:4px;padding:26px 28px 24px;box-shadow:var(--shadow);
+    transform:rotate(-.5deg);
+  }
+  .quote:nth-child(2n){background:var(--sticky-2);transform:rotate(.6deg)}
+  .quote:nth-child(3n){transform:rotate(.3deg)}
+  .quote .mark{
+    font-family:"Caveat",cursive;font-weight:700;font-size:3.4rem;line-height:.4;
+    color:var(--ink);opacity:.32;display:block;margin-bottom:10px;
+  }
+  .quote p{font-size:1.14rem;color:#3a3320;line-height:1.5}
+  .quote .by{margin-top:18px;font-weight:800;color:var(--ink)}
+  .quote .by span{display:block;font-weight:600;color:var(--ink-soft);font-size:.92rem}
+
+  /* friendly empty state for the growing wall */
+  .empty{
+    grid-column:1 / -1;text-align:center;color:var(--ink-soft);
+    border:2.5px dashed var(--line);border-radius:6px;padding:34px 24px;
+    font-family:"Caveat",cursive;font-size:1.5rem;
+  }
+
+  /* ============ FOOTER ============ */
+  footer{text-align:center;padding:40px 0 80px}
+  .footer-rule{width:120px;height:3px;background:var(--ink);margin:0 auto 26px;border-radius:3px;opacity:.25}
+  .signoff{font-family:"Caveat",cursive;font-weight:700;font-size:clamp(1.6rem,4vw,2.4rem);color:var(--ink)}
+  .signoff .star{color:var(--amber)}
+  .foot-note{color:var(--ink-soft);font-size:.95rem;margin-top:10px}
+  .foot-note a{color:var(--blue);font-weight:700}
+
+  @media (max-width:640px){
+    .ep{grid-template-columns:1fr;gap:14px}
+    .num{grid-row:auto;width:80px;height:80px;line-height:80px;font-size:2.6rem}
+    .ep-body{grid-column:1}
+    .quote-grid{grid-template-columns:1fr}
+    .quote,.quote:nth-child(2n),.quote:nth-child(3n){transform:none}
+    header{padding:24px 0 10px}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="topbar">
+    <a class="back" href="./index.html">← back to the day</a>
+  </div>
+
+  <header>
+    <div class="kicker">
+      <span class="sticky blue">⭐ what people built next</span>
+    </div>
+    <h1>The <span class="hl">Stories</span></h1>
+    <p class="lede">
+      A hackathon day is just the start. Here's what people made — and what they
+      <strong>kept making</strong> long after they went home.
+    </p>
+  </header>
+
+  <main>
+
+    <!-- ============ FEATURED: LEWIS COPPING ============ -->
+    <!-- TODO: when the video is ready, replace the .placeholder block below with:
+         <div class="video">
+           <iframe src="VIDEO_EMBED_URL" title="Lewis Copping — his story"
+                   allow="encrypted-media; fullscreen;" allowfullscreen></iframe>
+         </div>
+    -->
+    <section class="ep" id="lewis">
+      <div class="num">★</div>
+      <div class="ep-head">
+        <span class="ep-tag">a story from</span>
+        <h2 class="ep-title">Lewis Copping</h2>
+      </div>
+      <div class="ep-body">
+        <p class="ep-desc">
+          Lewis came to our <b>very first hackathon</b> — and didn't stop when the day ended.
+          He's since become a <b>teacher</b>, and he's carried on building with the tools he met
+          that day, genuinely excited by what's now possible. Here's his story, in his words.
+        </p>
+        <div class="frame">
+          <span class="sticky badge-soon">video coming soon</span>
+          <div class="placeholder">
+            <div class="play-ghost" aria-hidden="true"></div>
+            <p>Lewis's video — dropping in shortly</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUOTE WALL (grows over time) ============ -->
+    <h2 class="wall-head">In their own words</h2>
+    <p class="wall-sub">Feedback from people who've spent a day building with us.</p>
+
+    <div class="quote-grid" id="wall">
+
+      <!-- TEMPLATE — copy this block for each new testimonial:
+      <figure class="quote">
+        <span class="mark">&ldquo;</span>
+        <p>The quote goes here.</p>
+        <div class="by">Name<span>Role / event</span></div>
+      </figure>
+      -->
+
+      <div class="empty">
+        More stories landing soon — including feedback from the Private Banking hackathon. ✏️
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-rule"></div>
+    <p class="signoff">Come build the next one with us <span class="star">★</span></p>
+    <p class="foot-note"><a href="./index.html">← back to the hackathon day</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>
