@@ -62,6 +62,23 @@
 
   .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
 
+  /* ---------- top nav ---------- */
+  .topnav{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    flex-wrap:wrap;padding:20px 0 0;
+  }
+  .topnav .brand{font-family:"Caveat",cursive;font-weight:700;font-size:1.45rem;color:var(--ink);text-decoration:none}
+  .topnav .brand .s{color:var(--amber)}
+  .tabs{display:flex;gap:9px}
+  .tabs .tab{
+    font-family:"Caveat",cursive;font-weight:700;font-size:1.2rem;text-decoration:none;
+    color:var(--ink-soft);padding:.18em .85em;border:2px solid var(--ink);border-radius:30px;
+    background:rgba(255,255,255,.5);transform:rotate(-1deg);
+  }
+  .tabs .tab:last-child{transform:rotate(1deg)}
+  .tabs .tab:hover{background:var(--sticky)}
+  .tabs .tab.active{background:var(--sticky-2);color:#13486f;border-color:var(--blue)}
+
   /* ---------- marker font helper ---------- */
   .marker{font-family:"Caveat",cursive;font-weight:700;line-height:1}
 
@@ -317,6 +334,11 @@
   }
   .agenda-list li.brk{opacity:.58}
   .agenda-list li.brk .a{font-style:italic}
+  .plan-head{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(1.4rem,3.5vw,1.95rem);letter-spacing:-.02em;
+    margin:40px 0 6px;text-align:center;
+  }
 
   /* ============ STORIES CTA ============ */
   .cta-stories{margin:0 0 84px}
@@ -373,6 +395,14 @@
 <body>
 
 <div class="wrap">
+
+  <nav class="topnav">
+    <a class="brand" href="./index.html">The AI Hackathon <span class="s">★</span></a>
+    <div class="tabs">
+      <a class="tab active" href="./index.html">The Day</a>
+      <a class="tab" href="./testimonials.html">Stories</a>
+    </div>
+  </nav>
 
   <header>
     <div class="kicker reveal d1">
@@ -464,12 +494,12 @@
       <div class="num">3</div>
       <div class="ep-head">
         <span class="ep-tag">the practical one</span>
-        <h2 class="ep-title">Set up Base44</h2>
+        <h2 class="ep-title">Set up Base44 &amp; the plan</h2>
       </div>
       <div class="ep-body">
         <p class="ep-desc">
-          A two-minute walkthrough of the one thing to do before the day: create your
-          free <b>Base44</b> account, so we spend the day building, not signing up.
+          Your last video before the day: a quick walkthrough of the one thing to set up —
+          your free <b>Base44</b> account — plus a run through how the day itself will flow.
         </p>
         <div class="frame">
           <span class="sticky badge-soon">video coming soon</span>
@@ -478,17 +508,8 @@
             <p>Video 3 — dropping in shortly</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ============ AGENDA: THE DAY ============ -->
-    <section class="ep io" id="agenda">
-      <div class="num">4</div>
-      <div class="ep-head">
-        <span class="ep-tag">the plan for</span>
-        <h2 class="ep-title">The Day</h2>
-      </div>
-      <div class="ep-body">
+        <h3 class="plan-head" id="agenda">The day at a glance</h3>
         <p class="challenge-intro">
           Roughly how the day runs — <b>9:00 to 4:30</b>, with a proper lunch and two short breaks.
           Times will flex on the day, but this is the shape of it.
